@@ -8,4 +8,25 @@ if $::is_vagrant {
     $data_center = 'amazon'
 }
 
+class base_jenkins {
+    package { "dejavu-sans-fonts":
+        ensure => installed,
+    }
+    package { "dejavu-serif-fonts":
+        ensure => installed,
+    }
+    package { "fontconfig":
+        ensure => installed,
+    }
+    package { 'git':
+      ensure => installed,
+    }
+}
 include role::ui
+class { 'java':}
+class { 'base_jenkins':}
+class { 'jenkins':}
+jenkins::plugin {
+  "git" :
+    version => "1.3.0"
+}
