@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
   #
   config.vm.provision :puppet do |puppet|
       ## tell Puppet where to find the hiera config
-      puppet.options = "--hiera_config hiera.yaml"
+      puppet.options = "--hiera_config /vagrant/puppet/manifests/hiera.yaml"
 
       ### boilerplate Vagrant/Puppet config
       puppet.manifests_path = "puppet/manifests"

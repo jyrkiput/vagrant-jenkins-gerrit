@@ -9,4 +9,4 @@
 :json:
     # @todo replace with absolute path for non-Vagrant use
     # alternatively set a top-level variable in default.pp and do %{::var_name}
-    :datadir: 'hieradata'
+    :datadir: '/vagrant/puppet/manifests/hieradata'
